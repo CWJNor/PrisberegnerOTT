@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <title> Prisberegner</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <link rel="stylesheet" href="test_style.css">
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <link rel="icon" href="klammer.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J310RGWYY"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4J310RGWYY');
+        </script>
+    </head>
+    <body>
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://Norlys.dk">
+            <img src="norlys.png" alt="Norlys logo" width="100" height="20">
+          </a>
+        <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div id="navbarExampleTransparentExample" class="navbar-menu is-centered">
+          <div class="navbar-start is-centered">
+            <a class="navbar-item title is-centered" id="overskrift">
+              Prisberegner
+            </a>
+          </div>
+        </div>
+      </nav>
+        <hr id="breakline">
+        <button id="ryd" class="button"> Ryd valgte</button>
+        <div id="dropkategori" class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4" id="dropknapkategori">
+              <span>Kategorier</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content" id="kategoridropchild">
+            </div>
+          </div>
+        </div>
+        <div id="droptv2" class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4" id="dropknaptv2">
+              <span>TV2</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content" id="tv2dropchild">
+            </div>
+          </div>
+        </div>
+        <div id="dropvia" class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4" id="dropknapvia">
+              <span>Viaplay Group</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content" id="viadropchild">
+            </div>
+          </div>
+        </div>
+        <div id="dropdis" class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4" id="dropknapdis">
+              <span>Discovery</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content" id="disdropchild">
+            </div>
+          </div>
+        </div>
+
+        <!--<button id="prisknap" class="button"> Vælg Frit Priser</button>-->
+        <!--<button id="pointknap" class="button"> Se Stofa point</button>-->
+        <br>
+        <hr>
+        
+
+        <div id="tekst" class="align-left">
+        <p id="DRkanaler">OBS: DR kanaler altid inkluderet</p>
+        <p id="KellerS" class="title is-4">Kanaler</p>
+        </div>
+        <div class="checkboxes"> 
+            <form id="check">
+                <div class="left">
+                    
+                </div>
+                <div class="middleleft">
+
+                </div>
+                <div class="middleright">
+
+                </div>
+                <div class="right">
+
+                </div>
+            </form><br>
+        </div>
+        <p id="KellerS" class="title is-4 S2">
+            Streamingtjenester
+        </p>
+            <div class="checkboxes"> 
+                <form id="check">
+                    <div class="streamcol1">
+                        
+                    </div>
+                    <div class="streamcol2">
+                        
+                    </div>
+                    <div class="streamcol3">
+                        
+                    </div>
+                    <div class="streamcol4">
+                        
+                    </div>
+                </form>
+            </div>
+        <div id="res">
+          <div id="btndiv">
+            <button id="btn1" class="button" type="submit">Priser på streaming</button>
+            <button id="btn" class="button" type="submit">Få resultat</button>
+            <button id="btn2" class="button" type="submit">Altid med</button>
+          </div>
+            <button id="feedback" class="button">Giv feedback</button>
+        </div>
+        </div>
+        <script src="testkode.js"></script>
+    </body>
+</html>

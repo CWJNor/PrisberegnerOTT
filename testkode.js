@@ -312,8 +312,15 @@ TV2drop.childNodes[1].addEventListener("click",function(){
 let kategorilist=Array.from(new Set(genreliste));
 let katdrop=document.querySelector("#kategoridropchild");
 
-musikidx=kategorilist.indexOf("Musik")
-kategorilist.splice(musikidx,1)
+Fjernkategori=["Musik","Film","Serier"]
+for(let k of Fjernkategori){
+    fjernidx=kategorilist.indexOf(k)
+    console.log(k)
+    kategorilist.splice(fjernidx,1)
+    console.log(kategorilist)
+}
+
+
 //Hent kanaler
 for (let kat of kategorilist){
     let node=document.createElement("a");

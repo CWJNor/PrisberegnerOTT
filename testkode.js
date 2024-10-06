@@ -1787,7 +1787,7 @@ const btn = document.querySelector('#btn');
         });    
 
 let streamingpriser=[streamalldict["Pris"]];
-streamingpriser.sort();
+//streamingpriser.sort();
 
 
 

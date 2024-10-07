@@ -1725,7 +1725,7 @@ const btn = document.querySelector('#btn');
 
             let minpris=Number.MAX_VALUE;
             let expr="([0-9]+) .*"
-            Udbyderliste=[{name:"NVODTT",val:NVODTT},{name:"NVF",val:NVF},{name:"NPL",val:NPL},{name:"NVO",val:NVO},{name:"NV4",val:NV4},{name:"NVT",val:NVT},{name:"NVA",val:NVA}];
+            Udbyderliste=[{name:"NPL",val:NPL},{name:"NVO",val:NVO},{name:"NV4",val:NV4},{name:"NVT",val:NVT}];
             for (let u of Udbyderliste){
                 val=u.val.replace(expr,"");
                 val=parseInt(val);
@@ -1787,7 +1787,7 @@ const btn = document.querySelector('#btn');
         });    
 
 let streamingpriser=[streamalldict["Pris"]];
-//streamingpriser.sort();
+streamingpriser.sort();
 
 
 

@@ -180,9 +180,11 @@ let beskrivelser=[{"TV2":"Danmarks mest sete tv-kanal, som samler danskerne om a
 "MTV Club":"MTV Club er en musikkanal, der helt og holdent er tilegnet dansemusik. Du får drum’n’bass, trance, garage, house og fest i en fantastisk dansepakke.",
 "MTV Live":"MTV Live er en musikbaseret underholdningskanal, som tager udgangspunkt i legendariske, klassiske og splinternye MTV og Vh1 programmer.",
 "Polonia":"Følg med i nyheder og tv-programmer direkte fra Polen.",
-"Sport Live":"SPORT LIVE er en dansk sportskanal, som sender live mindst 10 timer om dagen. Kanalen sender hestevæddeløb fra hele verden og har et dagligt studieprogram med eksperter. Derudover sender SPORT LIVE fra en række danske sportsbegivenheder."
-}]
- 
+"Sport Live":"SPORT LIVE er en dansk sportskanal, som sender live mindst 10 timer om dagen. Kanalen sender hestevæddeløb fra hele verden og har et dagligt studieprogram med eksperter. Derudover sender SPORT LIVE fra en række danske sportsbegivenheder.",
+"TVE":"Televisión Española Internacional er en spansk tv-kanal, der tilbyder programmer fra det spanske tv-netværk RTVE (Radiotelevisión Española) til spansktalende seere rundt omkring i verden. Kanalen sender et bredt udvalg af indhold, herunder nyheder, underholdning, sportsbegivenheder, dokumentarer, serier og kulturprogrammer.",
+"TV5 Monde":"TV5 Monde Europe er en international fransksproget tv-kanal, der tilbyder nyheder, kulturprogrammer, underholdning, sprogundervisning og sportsbegivenheder fra Frankrig og resten af verden. Kanalen er dedikeret til at fremme fransk sprog og kultur på globalt plan."
+                  }]          
+
 beskrivelser.sort();
 
 let left = document.querySelector(".left");

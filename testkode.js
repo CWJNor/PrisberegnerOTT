@@ -1057,153 +1057,153 @@ let NVFfunc=function(){
         }
         }
 //Norlys Vælg 8
-let NVODTTfunc=function(){
-    let ikkem=[];
-    let streamlist=[];
-    let kanaler=[udbyderdict["NorlysVaelg8DTT_binaer"]];
-    let stream=[streamdict["NorlysVaelg8DTT_binaer"]];
-    let pakke=[pakkedict["NorlysVaelg8DTT_binaer"]]
-    kanaler.sort();
-    stream.sort();
-    let NVODTT=0;
-    let NVODTTstream=0;
-    Object.keys(kanaler[0]).forEach(navn=>{
-        if(kanaler[0][navn]!=="Løsning ikke mulig"){
-          kanaler[0][navn]=Number(kanaler[0][navn])
-        }
-      })
-      Object.keys(stream[0]).forEach(stnavn=>{
-        if(stream[0][stnavn]!=="Løsning ikke mulig"){
-          stream[0][stnavn]=Number(stream[0][stnavn])
-        }
-      })
-      Object.keys(pakke[0]).forEach(pnavn=>{
-        if(pakke[0][pnavn]!=="Løsning ikke mulig"){
-            pakke[0][pnavn]=Number(pakke[0][pnavn])
-        }  
-    })
-            for (let kanal of kanaler){
-                    for (let k of Object.keys(kanal)){
-                        if(values.includes(k)){
-                            if(kanal[k]=="Løsning ikke mulig"||NVODTT=="Løsning ikke mulig"){
-                                NVODTT="Løsning ikke mulig";
-                                if (kanal[k]=="Løsning ikke mulig"){
-                                    ikkem.push(k);}
-                            }
-                            else{
-                                NVODTT=NVODTT+kanal[k];
-                            }
-                        }
-                    }
-                }
-                for (let st of stream){
-                    for (let s of Object.keys(st)){
-                        if(values.includes(s)){
-                            if(st[s]=="Løsning ikke mulig"){
-                                if(streampris[0][s]=="Løsning ikke mulig"){
-                                    NVODTT="Løsning ikke mulig";
-                                    ikkem.push(s);
-                                }
-                                else{
-                                    NVODTTstream+=streampris[0][s];
-                                    streamlist.push(s);
-                                }
-                            }
-                            else{
-                                if(NVODTT!=="Løsning ikke mulig"){
-                                    NVODTT=NVODTT+st[s];
-                                }
-                            }
-                        }
-                    }
-                }
-        let basepris=pakke[0]["Basispris"];
-        if(NVODTT=="Løsning ikke mulig"){
-            return "Løsning ikke mulig pga.:"+"<br>("+ikkem.join(", ")+")";
-        }
-        else{
-            if(NVODTT>8){
-                return "Mere end 8 valgt"
-            }
-            if(NVODTTstream==0){
-                return basepris+" kr."+" ("+NVODTT+" ud af 8 kanaler valgt)";
-            }
-            else{
-                return NVODTTstream+basepris+" kr. (inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen)"+"<br>"+basepris+" kr. (ekskl. "+streamlist.join(", ")+") ("+NVODTT+" ud af 8 kanaler valgt)";
-                 }
-            }
-} 
+//let NVODTTfunc=function(){
+//    let ikkem=[];
+//    let streamlist=[];
+//    let kanaler=[udbyderdict["NorlysVaelg8DTT_binaer"]];
+//    let stream=[streamdict["NorlysVaelg8DTT_binaer"]];
+//    let pakke=[pakkedict["NorlysVaelg8DTT_binaer"]]
+//    kanaler.sort();
+//    stream.sort();
+//    let NVODTT=0;
+//    let NVODTTstream=0;
+//    Object.keys(kanaler[0]).forEach(navn=>{
+//        if(kanaler[0][navn]!=="Løsning ikke mulig"){
+//          kanaler[0][navn]=Number(kanaler[0][navn])
+//        }
+//      })
+//      Object.keys(stream[0]).forEach(stnavn=>{
+//        if(stream[0][stnavn]!=="Løsning ikke mulig"){
+//          stream[0][stnavn]=Number(stream[0][stnavn])
+//        }
+//      })
+//      Object.keys(pakke[0]).forEach(pnavn=>{
+//        if(pakke[0][pnavn]!=="Løsning ikke mulig"){
+//            pakke[0][pnavn]=Number(pakke[0][pnavn])
+//}  
+//    })
+//            for (let kanal of kanaler){
+//                    for (let k of Object.keys(kanal)){
+//                        if(values.includes(k)){
+//                            if(kanal[k]=="Løsning ikke mulig"||NVODTT=="Løsning ikke mulig"){
+//                                NVODTT="Løsning ikke mulig";
+//                                if (kanal[k]=="Løsning ikke mulig"){
+//                                    ikkem.push(k);}
+//                            }
+//                            else{
+//                                NVODTT=NVODTT+kanal[k];
+//                            }
+//                        }
+//                    }
+//                }
+//                for (let st of stream){
+//                    for (let s of Object.keys(st)){
+//                        if(values.includes(s)){
+//                            if(st[s]=="Løsning ikke mulig"){
+//                                if(streampris[0][s]=="Løsning ikke mulig"){
+//                                    NVODTT="Løsning ikke mulig";
+//                                    ikkem.push(s);
+//                                }
+//                                else{
+//                                    NVODTTstream+=streampris[0][s];
+//                                    streamlist.push(s);
+//                                }
+//                            }
+//                            else{
+//                                if(NVODTT!=="Løsning ikke mulig"){
+//                                    NVODTT=NVODTT+st[s];
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//        let basepris=pakke[0]["Basispris"];
+//        if(NVODTT=="Løsning ikke mulig"){
+//            return "Løsning ikke mulig pga.:"+"<br>("+ikkem.join(", ")+")";
+//        }
+//        else{
+//            if(NVODTT>8){
+//                return "Mere end 8 valgt"
+//            }
+//            if(NVODTTstream==0){
+//                return basepris+" kr."+" ("+NVODTT+" ud af 8 kanaler valgt)";
+//            }
+//            else{
+//                return NVODTTstream+basepris+" kr. (inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen)"+"<br>"+basepris+" kr. (ekskl. "+streamlist.join(", ")+") ("+NVODTT+" ud af 8 kanaler valgt)";
+//                 }
+//            }
+//} 
 //Norlys Vælg Alt
-let NVAfunc=function(){
-    let ikkem=[];
-    let streamlist=[];
-    let kanaler=[udbyderdict["NorlysVaelgAltDTT_binaer"]];
-    //[{TV2:1,TV2Charlie:1,TV2Fri:1,TV2News:1,TV2Sport:1,TV2SportX:1,TV2Echo:1,TV3:1,TV3Max:1,"TV3 +":1,TV3Puls:1,TV3Sport:1,Kanal4:1,Kanal5:1,'6eren':1,Canal9:1,DiscoveryChannel:1,DK4:1,NationalGeographic:1,'3Sat':"Løsning ikke mulig",AlJazeera:"Løsning ikke mulig",Animalplanet:1,ARD:0,ARTE:"Løsning ikke mulig",BBCBrit:"Løsning ikke mulig",BBCEarth:"Løsning ikke mulig",BBCWorldNews:"Løsning ikke mulig",BlueHustler:"Løsning ikke mulig",Boomerang:1,CartoonNetwork:1,CBSReality:"Løsning ikke mulig",CNN:1,DisneyChannel:1,DisneyJunior:1,Euronews:"Løsning ikke mulig",Eurosport1:1,Eurosport2:1,"ID-InvestegationDiscovery":1,Mezzo:"Løsning ikke mulig",MTV:"Løsning ikke mulig",MTV80s:"Løsning ikke mulig",MTV90s:"Løsning ikke mulig",MTVHits:"Løsning ikke mulig",NationalGeographicWild:"Løsning ikke mulig",NDR:0,"Nick jr.":"Løsning ikke mulig",Nickelodeon:1,NRK1:0,ZDF:0,SVT1:0,Folketinget:"Løsning ikke mulig",NRK2:"Løsning ikke mulig","TV4 Sverige":0,SVT2:0,"TV2Norge":0,ProSieben:"Løsning ikke mulig","Rai 1":"Løsning ikke mulig",See:1,TLC:1,VH1:1,"V sport golf":"Løsning ikke mulig","Viasat Explore":"Løsning ikke mulig","Viasat History":"Løsning ikke mulig","Viasat Nature":"Løsning ikke mulig",DiscoveryScience:"Løsning ikke mulig","ESC/ESC1":"Løsning ikke mulig","Extreme Sport":"Løsning ikke mulig","HRT-TV1":"Løsning ikke mulig",MTVClub:"Løsning ikke mulig",MTVLive:"Løsning ikke mulig",Polonia:"Løsning ikke mulig","Sport Live":1}];
-    let stream=[streamdict["NorlysVaelgAltDTT_binaer"]];
-    //[{TV2PlayBasis:1,TV2PlayFavoritSport:"Løsning ikke mulig","TV2PlayFavoritSport (Uden reklamer)":"Løsning ikke mulig","Disney+":"Løsning ikke mulig",HBOMax:79,NetflixStandard:"Løsning ikke mulig",NetflixPremium:"Løsning ikke mulig","NordiskFilm+":49,CMore:"Løsning ikke mulig",SkyShowtime:"Løsning ikke mulig","Discovery+underholdning":1,"Discovery+Sport":"Løsning ikke mulig","Viaplay (Film og Serier)":1,"Viaplay Total":1}];
-    let pakke=[pakkedict["NorlysVaelgAltDTT_binaer"]]
-    kanaler.sort();
-    stream.sort();
-    let NVA=0;
-    let NVAstream=0;
-    let HBO=0;
-    Object.keys(kanaler[0]).forEach(navn=>{
-        if(kanaler[0][navn]!=="Løsning ikke mulig"){
-          kanaler[0][navn]=Number(kanaler[0][navn])
-        }
-      })
-      Object.keys(stream[0]).forEach(stnavn=>{
-        if(stream[0][stnavn]!=="Løsning ikke mulig"){
-          stream[0][stnavn]=Number(stream[0][stnavn])
-        }
-      })
-      Object.keys(pakke[0]).forEach(pnavn=>{
-        if(pakke[0][pnavn]!=="Løsning ikke mulig"){
-            pakke[0][pnavn]=Number(pakke[0][pnavn])
-        }  
-    })
-            for (let kanal of kanaler){
-                    for (let k of Object.keys(kanal)){
-                        if(values.includes(k)){
-                            if(kanal[k]=="Løsning ikke mulig"||NVA=="Løsning ikke mulig"){
-                                NVA="Løsning ikke mulig";
-                                if (kanal[k]=="Løsning ikke mulig"){
-                                    ikkem.push(k);}
-                            }
-                        }
-                    }
-                }
-                for (let st of stream){
-                    for (let s of Object.keys(st)){
-                        if(values.includes(s)){
-                            if(st[s]=="Løsning ikke mulig"){
-                                if(streampris[0][s]=="Løsning ikke mulig"){
-                                    NVA="Løsning ikke mulig";
-                                    ikkem.push(s);
-                                }
-                                else{
-                                    NVAstream+=streampris[0][s];
-                                    streamlist.push(s);
-                                }
-                            }
-                            if(s=="HBOMax"||s=="NordiskFilm+"){
-                                HBO=HBO+st[s];
-                            }
-                        }
-                    }
-                }
-        let NVApris=pakke[0]["Basispris"]
-        let basepris=NVApris+HBO;
-        if(NVA=="Løsning ikke mulig"){
-            return "Løsning ikke mulig pga.: <br>("+ikkem.join(", ")+")";
-        }
-        if(NVAstream==0){
-            return basepris+" kr.";
-        }
-        else{
-            return NVAstream+basepris+" kr. (inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen)"+"<br>"+basepris+" kr. (ekskl. "+streamlist.join(", ")+")";
-        }
-    }
+//let NVAfunc=function(){
+//    let ikkem=[];
+//    let streamlist=[];
+//    let kanaler=[udbyderdict["NorlysVaelgAltDTT_binaer"]];
+//    //[{TV2:1,TV2Charlie:1,TV2Fri:1,TV2News:1,TV2Sport:1,TV2SportX:1,TV2Echo:1,TV3:1,TV3Max:1,"TV3 +":1,TV3Puls:1,TV3Sport:1,Kanal4:1,Kanal5:1,'6eren':1,Canal9:1,DiscoveryChannel:1,DK4:1,NationalGeographic:1,'3Sat':"Løsning ikke mulig",AlJazeera:"Løsning ikke mulig",Animalplanet:1,ARD:0,ARTE:"Løsning ikke mulig",BBCBrit:"Løsning ikke mulig",BBCEarth:"Løsning ikke mulig",BBCWorldNews:"Løsning ikke mulig",BlueHustler:"Løsning ikke mulig",Boomerang:1,CartoonNetwork:1,CBSReality:"Løsning ikke mulig",CNN:1,DisneyChannel:1,DisneyJunior:1,Euronews:"Løsning ikke mulig",Eurosport1:1,Eurosport2:1,"ID-InvestegationDiscovery":1,Mezzo:"Løsning ikke mulig",MTV:"Løsning ikke mulig",MTV80s:"Løsning ikke mulig",MTV90s:"Løsning ikke mulig",MTVHits:"Løsning ikke mulig",NationalGeographicWild:"Løsning ikke mulig",NDR:0,"Nick jr.":"Løsning ikke mulig",Nickelodeon:1,NRK1:0,ZDF:0,SVT1:0,Folketinget:"Løsning ikke mulig",NRK2:"Løsning ikke mulig","TV4 Sverige":0,SVT2:0,"TV2Norge":0,ProSieben:"Løsning ikke mulig","Rai 1":"Løsning ikke mulig",See:1,TLC:1,VH1:1,"V sport golf":"Løsning ikke mulig","Viasat Explore":"Løsning ikke mulig","Viasat History":"Løsning ikke mulig","Viasat Nature":"Løsning ikke mulig",DiscoveryScience:"Løsning ikke mulig","ESC/ESC1":"Løsning ikke mulig","Extreme Sport":"Løsning ikke mulig","HRT-TV1":"Løsning ikke mulig",MTVClub:"Løsning ikke mulig",MTVLive:"Løsning ikke mulig",Polonia:"Løsning ikke mulig","Sport Live":1}];
+//    let stream=[streamdict["NorlysVaelgAltDTT_binaer"]];
+//    //[{TV2PlayBasis:1,TV2PlayFavoritSport:"Løsning ikke mulig","TV2PlayFavoritSport (Uden reklamer)":"Løsning ikke mulig","Disney+":"Løsning ikke mulig",HBOMax:79,NetflixStandard:"Løsning ikke mulig",NetflixPremium:"Løsning ikke mulig","NordiskFilm+":49,CMore:"Løsning ikke mulig",SkyShowtime:"Løsning ikke mulig","Discovery+underholdning":1,"Discovery+Sport":"Løsning ikke mulig","Viaplay (Film og Serier)":1,"Viaplay Total":1}];
+//    let pakke=[pakkedict["NorlysVaelgAltDTT_binaer"]]
+//    kanaler.sort();
+//    stream.sort();
+//    let NVA=0;
+//    let NVAstream=0;
+//    let HBO=0;
+//    Object.keys(kanaler[0]).forEach(navn=>{
+//        if(kanaler[0][navn]!=="Løsning ikke mulig"){
+//          kanaler[0][navn]=Number(kanaler[0][navn])
+//        }
+//      })
+//      Object.keys(stream[0]).forEach(stnavn=>{
+//        if(stream[0][stnavn]!=="Løsning ikke mulig"){
+//          stream[0][stnavn]=Number(stream[0][stnavn])
+//        }
+//      })
+//      Object.keys(pakke[0]).forEach(pnavn=>{
+//        if(pakke[0][pnavn]!=="Løsning ikke mulig"){
+//            pakke[0][pnavn]=Number(pakke[0][pnavn])
+//        }  
+//    })
+//            for (let kanal of kanaler){
+//                    for (let k of Object.keys(kanal)){
+//                        if(values.includes(k)){
+//                            if(kanal[k]=="Løsning ikke mulig"||NVA=="Løsning ikke mulig"){
+//                                NVA="Løsning ikke mulig";
+//                                if (kanal[k]=="Løsning ikke mulig"){
+//                                    ikkem.push(k);}
+//                            }
+//                        }
+//                    }
+//                }
+//                for (let st of stream){
+//                    for (let s of Object.keys(st)){
+//                        if(values.includes(s)){
+//                            if(st[s]=="Løsning ikke mulig"){
+//                                if(streampris[0][s]=="Løsning ikke mulig"){
+//                                    NVA="Løsning ikke mulig";
+//                                    ikkem.push(s);
+//                                }
+//                                else{
+//                                    NVAstream+=streampris[0][s];
+//                                    streamlist.push(s);
+//                                }
+//                            }
+//                            if(s=="HBOMax"||s=="NordiskFilm+"){
+//                                HBO=HBO+st[s];
+//                            }
+//                        }
+//                    }
+//                }
+//        let NVApris=pakke[0]["Basispris"]
+//        let basepris=NVApris+HBO;
+//        if(NVA=="Løsning ikke mulig"){
+//            return "Løsning ikke mulig pga.: <br>("+ikkem.join(", ")+")";
+//        }
+//        if(NVAstream==0){
+//            return basepris+" kr.";
+//        }
+//        else{
+//            return NVAstream+basepris+" kr. (inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen)"+"<br>"+basepris+" kr. (ekskl. "+streamlist.join(", ")+")";
+//        }
+//    }
 
 //OTT
 //Norlys Vælg 4 - en streamingtjeneste max

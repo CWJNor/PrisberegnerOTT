@@ -983,79 +983,79 @@ pakkepris.sort();
 
 //DTT
 //Norlys Vælg Frit
-let NVFfunc=function(){
-    let ikkem=[];
-    let streamlist=[];
-    let kanaler=[udbyderdict["NorlysVaelgFritDTT_pris"]];
-    let stream=[streamdict["NorlysVaelgFritDTT_pris"]];
-    let pakke=[pakkedict["NorlysVaelgFritDTT_pris"]]
-    kanaler.sort();
-    stream.sort();
-    let NVF=0;
-    let NVFstream=0;
-    Object.keys(kanaler[0]).forEach(navn=>{
-        if(kanaler[0][navn]!=="Løsning ikke mulig"){
-          kanaler[0][navn]=Number(kanaler[0][navn])
-        }
-      })
-    Object.keys(stream[0]).forEach(stnavn=>{
-        if(stream[0][stnavn]!=="Løsning ikke mulig"){
-          stream[0][stnavn]=Number(stream[0][stnavn])
-        }})
-    Object.keys(pakke[0]).forEach(pnavn=>{
-        if(pakke[0][pnavn]!=="Løsning ikke mulig"){
-            pakke[0][pnavn]=Number(pakke[0][pnavn])
-        }  
-    })
-            for (let kanal of kanaler){
-                for (let k of Object.keys(kanal)){
-                    if(values.includes(k)){
-                        if(kanal[k]=="Løsning ikke mulig"||NVF=="Løsning ikke mulig"){
-                            NVF="Løsning ikke mulig";
-                            if (kanal[k]=="Løsning ikke mulig"){
-                                ikkem.push(k);}
-                        }
-                        else{
-                            NVF=NVF+kanal[k];
-                        }
-                        
-                        }
-                    }
-                }
-             
-                for (let st of stream){
-                    for (let s of Object.keys(st)){
-                        if(values.includes(s)){
-                            if(st[s]=="Løsning ikke mulig"){
-                                if(streampris[0][s]=="Løsning ikke mulig"){
-                                    NVF="Løsning ikke mulig";
-                                    ikkem.push(s);
-                                }
-                                else{
-                                    NVFstream+=streampris[0][s];
-                                    streamlist.push(s);
-                                }
-                            }
-                            else{
-                                NVF=NVF+st[s];
-                            }
-                            
-                            }
-                        }
-                    }
-        
-        let NVFpris=pakke[0]["Basispris"];
-        let basepris=NVFpris+NVF
-        if(isNaN(NVF)){
-            return "Løsning ikke mulig pga.:"+"<br>("+ikkem.join(", ")+")"
-        }
-        if(NVFstream==0){
-            return basepris+" kr.";
-        }
-        else{
-            return NVFstream+basepris+" kr. (inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen)"+"<br>"+basepris+" kr. (ekskl. "+streamlist.join(", ")+")";
-        }
-        }
+//let NVFfunc=function(){
+//    let ikkem=[];
+//    let streamlist=[];
+//    let kanaler=[udbyderdict["NorlysVaelgFritDTT_pris"]];
+//    let stream=[streamdict["NorlysVaelgFritDTT_pris"]];
+//    let pakke=[pakkedict["NorlysVaelgFritDTT_pris"]]
+//    kanaler.sort();
+//    stream.sort();
+//    let NVF=0;
+//    let NVFstream=0;
+//    Object.keys(kanaler[0]).forEach(navn=>{
+//        if(kanaler[0][navn]!=="Løsning ikke mulig"){
+//          kanaler[0][navn]=Number(kanaler[0][navn])
+//        }
+//      })
+//    Object.keys(stream[0]).forEach(stnavn=>{
+//        if(stream[0][stnavn]!=="Løsning ikke mulig"){
+//          stream[0][stnavn]=Number(stream[0][stnavn])
+//        }})
+//    Object.keys(pakke[0]).forEach(pnavn=>{
+//        if(pakke[0][pnavn]!=="Løsning ikke mulig"){
+//            pakke[0][pnavn]=Number(pakke[0][pnavn])
+//        }  
+//    })
+//            for (let kanal of kanaler){
+//                for (let k of Object.keys(kanal)){
+//                    if(values.includes(k)){
+//                        if(kanal[k]=="Løsning ikke mulig"||NVF=="Løsning ikke mulig"){
+//                            NVF="Løsning ikke mulig";
+//                            if (kanal[k]=="Løsning ikke mulig"){
+//                                ikkem.push(k);}
+//                        }
+//                        else{
+//                            NVF=NVF+kanal[k];
+//                        }
+//                        
+//                        }
+//                    }
+//                }
+//             
+//                for (let st of stream){
+//                    for (let s of Object.keys(st)){
+//                        if(values.includes(s)){
+//                            if(st[s]=="Løsning ikke mulig"){
+//                                if(streampris[0][s]=="Løsning ikke mulig"){
+//                                    NVF="Løsning ikke mulig";
+//                                    ikkem.push(s);
+//                                }
+//                                else{
+//                                    NVFstream+=streampris[0][s];
+//                                    streamlist.push(s);
+//                                }
+//                            }
+//                            else{
+//                                NVF=NVF+st[s];
+//                            }
+//                            
+//                            }
+//                        }
+//                    }
+//        
+//        let NVFpris=pakke[0]["Basispris"];
+//        let basepris=NVFpris+NVF
+//        if(isNaN(NVF)){
+//            return "Løsning ikke mulig pga.:"+"<br>("+ikkem.join(", ")+")"
+//        }
+//        if(NVFstream==0){
+//            return basepris+" kr.";
+//        }
+//        else{
+//            return NVFstream+basepris+" kr. (inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen)"+"<br>"+basepris+" kr. (ekskl. "+streamlist.join(", ")+")";
+//        }
+//        }
 //Norlys Vælg 8
 //let NVODTTfunc=function(){
 //    let ikkem=[];

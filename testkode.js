@@ -1717,12 +1717,9 @@ const btn = document.querySelector('#btn');
             checkboxes.forEach((checkbox) => {
                 values.push(checkbox.value);
             });
-            let NVF=NVFfunc();
-            let NVO=NVOfunc();
-            let NVODTT=NVODTTfunc();
             let NV4=NV4func();
+            let NVO=NVOfunc();
             let NVT=NVTfunc();
-            let NVA=NVAfunc();
             let NPL=NPLfunc();
 
             let minpris=Number.MAX_VALUE;

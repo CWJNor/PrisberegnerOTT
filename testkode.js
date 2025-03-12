@@ -1604,7 +1604,7 @@ const btn = document.querySelector('#btn');
                 swal.fire("Ingen kanaler valgt");
             }
             else{
-                swal.fire({title:"Priser:",html:'<div class="align-left">'+pris.join("")+'<br><br><span style="font-style:italic"> OBS: Se hjemmeside for foreningspriser</span></div>',customClass:"swall_wide"});
+                swal.fire({title:"Priser:",html:'<div class="align-left">'+pris.join("")+'<br><br></div>',customClass:"swall_wide"});
             };
             pris=[];
             values=[];

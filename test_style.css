@@ -75,10 +75,30 @@
     padding:20px;
     font-size:15px;
 }
-.hidden.innertext{
+
+.hiddenstream{
+    display:none;
+    z-index: 10;
+    position:fixed;
+    width: 420px;
+    height:220px;
+    background: rgba(211, 211, 211, 0.97);
+    border-radius: 5%;
+    margin-left:20px;
+    margin-bottom: 100px;
+    padding:20px;
+    font-size:15px;
+}
+
+.hidden.innertext+.hiddenstream.innertext{
     opacity:1;
 }
+
 .hoverable:hover+.hidden{
+    display:block;
+}
+
+.hoverable:hover+.hiddenstream{
     display:block;
 }
 
@@ -189,13 +209,13 @@ p{
 
 #btn,#btn1,#btn2,#btn3,#btn4{
     display:inline;
-    width:17%;
+    width:220px;
     text-align: center;
     height: 45px;
     background-color: #d4eefa;
-    font-size: 16px;
+    font-size: 18px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal ;
     vertical-align: top;
     margin-left: 1%;
     margin-right: 1%;

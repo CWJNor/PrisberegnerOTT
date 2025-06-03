@@ -3,7 +3,7 @@ if (!sessionStorage.getItem('pageLoaded')) {
     location.reload();
 }
 
-// Fetch CSV file containing channels and create provider and channel lists
+// csv filer fra Github
 //#region
 let myvar=""
 $.ajax({
@@ -100,6 +100,8 @@ genreliste.splice(0,1);
 
 //#endregion
 
+//Beskrivelser
+//#region
 let beskrivelser=[{"TV2":"Danmarks mest sete tv-kanal, som samler danskerne om alt det vi deler gennem et mangfoldigt programudbud, der omfatter nyheder, aktualitet, dansk fiktion, underholdning, sport, dokumentar og livsstil, spillefilm, morgen-tv og meget mere.",
 "TV2 Charlie":"Kanalen henvender sig til voksne og nysgerrige danskere med lyst til at blive underholdtog  prioriterer den gode danske underholdning og musik, dansk fiktion, talkshows, danske filmklassikere, events og de bedste europæiske serier, herunder både dramaer og prisbelønnede krimiserier.",
 "TV2 Fri":"En unik fritids- og friluftskanal for dig, der vil inspireres. Oplev programmer om hus, have, madlavning og gør-det-selv arbejde.",
@@ -178,15 +180,15 @@ let beskrivelser=[{"TV2":"Danmarks mest sete tv-kanal, som samler danskerne om a
 beskrivelser.sort();
 
 let streamingbeskrivelser=[{"Disney+ Premium":"Disney+ tilbyder et stort udvalg af film, serier, LIVE fodbold mm. Underholdning fra Disney, Pixar, Marvel, Star Wars, National Geographic og Star. Fodboldkampe fra UEFA Europa League og UEFA Conference League. Premium: Video i op til 4K UHD og HDR. 4 samtidige afspilninger. Download på op til 10 enheder. Lyd i op til Dolby Atmos. Uden reklamer.",
-    "Max":"<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Telia.</span><br>Max samler HBO Max's film, serier og dokumentarer og Discoverys underholdning fra det virkelige liv.",
+    "Max":"<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Norlys Mobil.</span><br>Max samler HBO Max's film, serier og dokumentarer og Discoverys underholdning fra det virkelige liv.",
     "Netflix Premium":"Netflix er en streamingtjeneste, der tilbyder en lang række prisbelønnede serier, film, anime, dokumentarer og meget mere. Premium: 4K+HDR, 4 enheder kan se ad gangen, downloads på 6 enheder.",
-    "Netflix Standard":"<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Telia.</span><br>Netflix er en streamingtjeneste, der tilbyder en lang række prisbelønnede serier, film, anime, dokumentarer og meget mere. Standard: 1080p (Fuld HD), 2 enheder kan se ad gangen, downloads på 2 enheder.",
+    "Netflix Standard":"<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Norlys Mobil.</span><br>Netflix er en streamingtjeneste, der tilbyder en lang række prisbelønnede serier, film, anime, dokumentarer og meget mere. Standard: 1080p (Fuld HD), 2 enheder kan se ad gangen, downloads på 2 enheder.",
     "Nordisk Film+":"Med Nordisk Film+ får du det største udvalg af danske film samlet i én streamingtjeneste. Se eller gense nye danske film med alle de skuespillere, du kender, og få adgang til de gode gamle klassikere fra Dansk Filmskat. Du får også håndplukkede film fra Hollywood, og familiens yngste kan boltre sig i et sjovt og trygt børneunivers.",
     "SkyShowtime":"SkyShowtim tilbyder et unikt udvalg fyldt med spændende og underholdende indhold, herunder nye og ekslusive serier. Derudover finder der er også familie- og børneunderholdning",
-    "TV2 PLAY Basis": "<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Telia.</span><br>Med TV2 PLAY Basis får du fuld adgang til alle TV2s on demand-programmer. Du kan zappe mellem TV2s indhold, se snigpremiere på din yndlingsserie eller gå på opdagelse i det store arkiv med over 10.000 film, serier og programmer.",
+    "TV2 PLAY Basis": "<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Norlys Mobil.</span><br>Med TV2 PLAY Basis får du fuld adgang til alle TV2s on demand-programmer. Du kan zappe mellem TV2s indhold, se snigpremiere på din yndlingsserie eller gå på opdagelse i det store arkiv med over 10.000 film, serier og programmer.",
     "TV2 PLAY Favorit+Sport":"Få ubegrænset adgang til alle TV2s syv livekanaler (inklusiv TV2 Sport og TV2 Sport X) og alle TV2s serier og programmer on demand. Når du vil, og hvor du vil. TV2 Play Favorit + Sport er for dig, der vil streame TV2s serier on demand og se live-tv på alle TV2s syv livekanaler: TV2, TV2 News, TV2 Echo, TV2 Charlie, TV2 Fri, TV2 Sport og TV2 Sport X.",
-    "TV2 PLAY Favorit+Sport (u. reklamer)":"<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Telia.</span><br>Få ubegrænset adgang til alle TV2s syv livekanaler (inkl. TV2 Sport og TV2 Sport X) og alle TV2s serier og programmer on demand. Når du vil, og hvor du vil.",
-    "Viaplay (Film og Serier)": "<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Telia.</span><br>Viaplay Film & Serier sørger for underholdning til hele familien. Du får nemlig hele Viaplays serieudbud, nye film hver uge, børneprogrammer, og populære reality-serier.",
+    "TV2 PLAY Favorit+Sport (u. reklamer)":"<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Norlys Mobil.</span><br>Få ubegrænset adgang til alle TV2s syv livekanaler (inkl. TV2 Sport og TV2 Sport X) og alle TV2s serier og programmer on demand. Når du vil, og hvor du vil.",
+    "Viaplay (Film og Serier)": "<span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Norlys Mobil.</span><br>Viaplay Film & Serier sørger for underholdning til hele familien. Du får nemlig hele Viaplays serieudbud, nye film hver uge, børneprogrammer, og populære reality-serier.",
     "Viaplay (Film og Serier) (m. reklamer)": "Viaplay Film & Serier sørger for underholdning til hele familien. Du får nemlig hele Viaplays serieudbud, nye film hver uge, børneprogrammer, og populære reality-serier.",
     "Viaplay Premium":"Med Viaplay Premium får du alt det bedste vi kan tilbyde både af Sport og Film & Serier. Her kan du se højdepunkter og klips fra det store udbud af premium sports-rettigheder, samt sportsnyhedskanalen – Viaplay Sports News. Derudover giver Viaplay Premium adgang til eksklusiv sport der kun findes i denne pakke. ",
     "Viaplay Total": "Med Viaplay Total får du livesport i verdensklasse og masser af underholdning til hele familien."
@@ -198,8 +200,11 @@ let middleright=document.querySelector(".middleright");
 let right = document.querySelector(".right");
 
   
-  let names=kanalliste;
+let names=kanalliste;
+//#endregion
 
+//_______________________________________________________________________________________________________________________________________
+//DROP DOWN OG KNAPPER
 //TV2 Dropdown
 //#region
 let TV2list=["Vælg alle","TV2","TV2 Charlie","TV2 News","TV2 Echo","TV2 Fri","TV2 Sport", "TV2 SportX"]
@@ -502,7 +507,7 @@ ryd.addEventListener("click",function(){
 })
 //#endregion
 
-//Feedback buttom
+//Feedback button
 //#region
 let newwindow = null;
 
@@ -537,7 +542,7 @@ feedbackknap.addEventListener("click", function () {
         return false;
       }
 
-      let recipient = 'torsch@norlys.dk; clajes@norlys.dk';
+      let recipient = 'torsch@norlys.dk';
       let body = feedbackbesked;
       let subject="Feedback fra Prisberegneren: "+feedbacknavn;
 
@@ -562,7 +567,6 @@ feedbackknap.addEventListener("click", function () {
 //#endregion
 
 //Button to show channels always included
-
 //#region
 let Kampagneknap=document.querySelector("#btn2");
 Kampagneknap.addEventListener("click",function(){
@@ -581,8 +585,9 @@ function triggerEvent (element, eventName) {
   }
 
 //#endregion
+//_______________________________________________________________________________________________________________________________________
 
-//Tilføj kanaler
+//Tilføj kanaler- OBS: Burde ikke være nødvendigt at ændre meget her
 //#region
 
 new_names=[]
@@ -595,7 +600,7 @@ for (let i=0;i<names.length;i++) {
 
 names=new_names
 
-for (let i=0;i<names.length;i++) {
+for (let i=0;i<names.length;i++) {   //Ændre disse < ..., hvis længden af kolonnerne ikke passer, når man tilføjer/fjerner kanal. 
     let side=left;
     if (i>names.length/4-1){
         if(i>3*(names.length/4)-1){
@@ -711,7 +716,7 @@ for (let i=0;i<names.length;i++) {
 //#endregion
 
 
-//Streaming
+//Streaming - tilsvarende til det ovenfor, bare for streaming. 
 //#region
 
 let mystream="";
@@ -810,12 +815,7 @@ for (let i=0;i<stream.length;i++) {
         mycheck.checked = !mycheck.checked;
     })
 
-    //let pointtal=document.createElement("div");
-    //pointtal.classList.add("stofapoint");
-    //pointtal.classList.add("hidden");
-
     let mellem= document.createElement("br");
-    //side.appendChild(pointtal);
     side.appendChild(infohover)
     side.appendChild(hiddeninfo)
     side.appendChild(mycheck);
@@ -827,10 +827,8 @@ for (let i=0;i<stream.length;i++) {
 }
 //#endregion
 
-
-//UDREGNER PRISER
-
-
+//___________________________________________________________________________________________________________________________________
+//UDREGNER PRISER - en funktion per "pakke" (en til pakkeløsning (PL), en til Vælg4 (V4), en til Vælg 8 (VO), en til Vælg 20 (VT))
 //Importerer streamingpriser
 //#region
 let mystreamall="";
@@ -840,7 +838,7 @@ let mystreamall="";
       url: "https://raw.githubusercontent.com/CWJNor/kanalcsv/main/streamingpriser_direkte.csv",
       success: function(csv) {
           const output = Papa.parse(csv, {
-            header: true, // Convert rows to Objects using headers as properties
+            header: true, 
           });
           if (output.data) {
             mystreamall=output.data;
@@ -936,7 +934,7 @@ pakkepris.sort();
 //#endregion
 
 //OTT - different subscription types:
-
+//#region
 Teliastreaming=["Max","Netflix Standard","TV2 PLAY Basis","TV2 PLAY Favorit+Sport (u. reklamer)","Viaplay (Film og Serier)"]
 //Norlys Vælg 4 - en streamingtjeneste max
 let NV4func=function(){
@@ -1020,7 +1018,7 @@ let NV4func=function(){
             else{
                 Teliafilter=streamlist.filter(item => Teliastreaming.includes(item))
                 if(Teliafilter.length>0){
-                    return  basepris+" kr. ("+NV4+" ud af 4 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Telia.</span>"
+                    return  basepris+" kr. ("+NV4+" ud af 4 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Norlys Mobil.</span>"
                     }
                 return basepris+" kr. ("+NV4+" ud af 4 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ");
             }
@@ -1110,7 +1108,7 @@ let NVOfunc=function(){
             else{
                 Teliafilter=streamlist.filter(item => Teliastreaming.includes(item))
                 if(Teliafilter.length>0){
-                    return  basepris+" kr. ("+NVO+" ud af 8 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Telia.</span>"
+                    return  basepris+" kr. ("+NVO+" ud af 8 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Norlys Mobil.</span>"
                     }
                 return basepris+" kr. ("+NVO+" ud af 8 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ");
                  }
@@ -1199,7 +1197,7 @@ let NVTfunc=function(){
             else{
                 Teliafilter=streamlist.filter(item => Teliastreaming.includes(item))
                 if(Teliafilter.length>0){
-                    return  basepris+" kr. ("+NVT+" ud af 20 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Telia.</span>"
+                    return  basepris+" kr. ("+NVT+" ud af 20 kanaler valgt)"+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Norlys Mobil.</span>"
                     }
                 //if(Teliafilter.length>0){
                 //return   NVTstream+basepris+" kr.  ("+NVT+" ud af 20 kanaler valgt)<br>Inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen."+"<br>"+basepris+" kr. ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Telia.</span>"
@@ -1282,7 +1280,7 @@ let NPLfunc=function(){
             else{
                 Teliafilter=streamlist.filter(item => Teliastreaming.includes(item))
                 if(Teliafilter.length>0){
-                return  pakkepris[NPL]+" kr."+pakken[NPL]+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Telia.</span>"
+                return  pakkepris[NPL]+" kr."+pakken[NPL]+" <br>OBS: ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Norlys Mobil.</span>"
                 //NPLstream+pakkepris[NPL]+" kr."+pakken[NPL]+" <br>Inkl. tilkøb af "+streamlist.join(", ")+" direkte hos streamingudbyderen."+"<br>"+pakkepris[NPL]+" kr. ekskl. "+streamlist.join(", ")+"<br><span style='color: purple;'>"+ Teliafilter.join(", ") +" kan tilkøbes med mobilabonnement hos Telia.</span>"
                 }
                 return pakkepris[NPL]+" kr."+pakken[NPL]+" <br>OBS: ekskl. "+streamlist.join(", ")
@@ -1290,9 +1288,11 @@ let NPLfunc=function(){
                  }
     }
 }
-
+//#endregion
 
 //Getting the selected channels and the prices for those for each type of subscription, pushing them to the pop-up
+//Push resultaterne ud 
+//#region 
 let values = [];
 let pris=[];
 
@@ -1322,27 +1322,42 @@ const btn = document.querySelector('#btn');
                 val=u.val.replace(expr,"");
                 val=parseInt(val);
                 
-            
-                   
-                if(val==minpris){
+                
+                  if(val==minpris){
                     if (u.name=="NPL"){
                         let parts = NPL.split(/<br\s*\/?>/); 
-                        NPL="<span class=cheap>"+parts[0]+"</span><br>" + parts.slice(1).join('<br>');
+                        NPL = "<span class='cheap'>" + parts[0] + "</span>";
+                        if (parts.length > 1) {
+                            NPL += "<br>" + parts.slice(1).join("<br>");
+                        }
                     }
-                    if (u.name=="NV4"){
-                        let parts = NV4.split(/<br\s*\/?>/); 
-                        NV4="<span class=cheap>"+parts[0]+"</span><br>" + parts.slice(1).join('<br>');
+                    if (u.name == "NV4") {
+                        let parts = NV4.split(/<br\s*\/?>/);//.filter(p => p.trim() !== "");
+                        NV4 = "<span class='cheap'>" + parts[0] + "</span>";
+                        if (parts.length > 1) {
+                            NV4 += "<br>" + parts.slice(1).join("<br>");
+                        }
                     }
-                    if (u.name=="NVO"){
-                        let parts = NVO.split(/<br\s*\/?>/); 
-                        NVO="<span class=cheap>"+parts[0]+"</span><br>" + parts.slice(1).join('<br>');
+
+                    if (u.name == "NVO") {
+                        let parts = NVO.split(/<br\s*\/?>/);//.filter(p => p.trim() !== "");
+                        NVO = "<span class='cheap'>" + parts[0] + "</span>";
+                        if (parts.length > 1) {
+                            NVO += "<br>" + parts.slice(1).join("<br>");
+                        }
                     }
-                    if (u.name=="NVT"){
-                        let parts = NVT.split(/<br\s*\/?>/); 
-                        NVT="<span class=cheap>"+parts[0]+"</span><br>" + parts.slice(1).join('<br>');
-                    }
+
+                    if (u.name == "NVT") {
+                        let parts = NVT.split(/<br\s*\/?>/);//.filter(p => p.trim() !== "");
+                        NVT = "<span class='cheap'>" + parts[0] + "</span>";
+                        if (parts.length > 1) {
+                            NVT += "<br>" + parts.slice(1).join("<br>");
+                        }
                 }
             }
+        }
+                   
+            
             
             pris.push("Norlys pakkeløsning <img  alt='streaming' src='streaming.png' class='icon'>: ".bold()+NPL);
             pris.push("<br>");
@@ -1372,17 +1387,18 @@ const btn = document.querySelector('#btn');
 
 let streamingpriser=[streamalldict["Pris"]];
 streamingpriser.sort();
-
-
+//#endregion
 
 //Pop up that shows the prices for streamingservices bought directly at the provider
+//Når man klikker på "Streaming priser"
+//#region 
 const btn1=document.querySelector("#btn1");
         btn1.addEventListener('click',(event)=>{
             streamprint=[]
             for (let stream of streamingpriser){
                 for (let s of Object.keys(stream)){
                     if (Teliastreaming.includes(s)){
-                        streamprint.push(s.bold()+":  "+stream[s]+" kr."+"<br><span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Telia.</span><br><br>");
+                        streamprint.push(s.bold()+":  "+stream[s]+" kr."+"<br><span style='color: purple;'>Kan tilkøbes med mobilabonnement hos Norlys Mobil.</span><br><br>");
                     }
                     else{
                     streamprint.push(s.bold()+":  "+stream[s]+" kr."+"<br><br>");
@@ -1398,7 +1414,4 @@ const btn1=document.querySelector("#btn1");
             swal.fire({title:"Priser på streaming<hr>",html:"<div class=align-left id=streamingpris>"+"<div>"+firstHalf.join("")+"</div>"+"<div>"+secondHalf.join("")+"</div>"+"</div>",width:"1000px"});
             });
 
-
-//Stofa vælg frit
-//#region
 //#endregion

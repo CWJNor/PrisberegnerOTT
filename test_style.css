@@ -10,14 +10,11 @@
 #dropkategori{
     margin-left:20px;
 }
-.dropdown,.dropdown-trigger,#dropknaptv2,#dropknap,#dropknapvia,#dropknapdis,#dropknapkategori{
+.dropdown,.dropdown-trigger,#dropknaptv2,#dropknapvia,#dropknapdis,#dropknapkategori{
     width:150px;
 }
 
-#vhr{
-    border:0px;
-    margin:0px;
-}
+
 #breakline{
     margin-top:0px;
     margin-bottom: 2px;
@@ -28,26 +25,6 @@
     border:1.5px;
     border-color:gray;
     border-style: solid;
-}
-.stofapoint{
-    margin-top:5px;
-    font-weight: bold;
-    margin-right:11px;
-    float:left;
-    text-align:center;
-    font-size:14px;
-    height:16px;
-    width: 16px;
-}
-.Norlyspris{
-    margin-right:11px;
-    margin-top:5px;
-    font-weight: bold;
-    float:left;
-    text-align:center;
-    font-size:14px;
-    height:16px;
-    width: 16px;
 }
 
 .hoverable{
@@ -150,13 +127,6 @@ p{
     left:93.5%;
 }
 
-#pointcheck{
-    position:absolute;
-    right:150px;
-    margin-top:10px;
-    font-size:18px;
-    font-family: sans-serif;
-}
 #res{
     display:inline-block;
     bottom:0;
@@ -201,13 +171,8 @@ p{
     text-align: center !important;
 }
 
-.ekstrakanaler{
-    width:80% !important;
-    height: 90% !important;
-    text-align: center !important;
-}
 
-#btn,#btn1,#btn2,#btn3,#btn4{
+#btn,#btn1,#btn2{
     display:inline;
     width:220px;
     text-align: center;
@@ -232,21 +197,12 @@ p{
     width:70%;
 }
 
-#back{
-    position: relative;
-    bottom: 0px;
-    text-align: center;
-}
 button{
     margin-top:5px;
     border-radius: 5px;
     font-family: sans-serif;
 }
-#vælg{
-    text-align:left;
-    bottom:auto;
-    font-size: 20px;
-}
+
 #tekst{
     background-image: linear-gradient(to right, #eee7e27c 0%, #eee7e27c 100%);
     background-repeat: repeat-x; 
@@ -312,24 +268,6 @@ hr{
     border: 3px solid #fff;
     padding: 20px;
     text-align: center;
-}
-
-.float-child {
-    height:100%;
-    width: 50%;
-    float: left;
-    padding: 20px;
-    border: 2px solid lightgray;
-}  
-
-.imgchannels{
-    max-height:95%;
-}
-
-
-.headerekstra{
-    font-size: 35px;
-    font-weight: bold;
 }
 
 .icon{
